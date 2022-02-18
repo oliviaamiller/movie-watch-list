@@ -1,14 +1,13 @@
+/* eslint-disable no-console */
 const fetch = require('node-fetch');
 require('dotenv').config();
 
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
 
   const searchMovies = event.queryStringParameters.searchQuery;
 
   const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_KEY}&language=en-US&page=1&include_adult=false&query=${searchMovies}`;
-
-  const 
 
 
   try {
