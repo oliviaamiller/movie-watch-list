@@ -5,9 +5,9 @@ require('dotenv').config();
 
 exports.handler = async (event) => {
 
-  const searchMovies = event.queryStringParameters.searchQuery;
+  const search = event.queryStringParameters.searchQuery;
 
-  const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_KEY}&language=en-US&page=1&include_adult=false&query=${searchMovies}`;
+  const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_KEY}&language=en-US&page=1&include_adult=false&query=${search}`;
 
 
   try {
