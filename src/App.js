@@ -13,10 +13,22 @@ import { logout } from './services/fetch-utils';
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState('');
+
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
+        {
+          user &&
+        <div>
+          <NavLink activeClassName='active-class'>Find Movies</NavLink>
+          <NavLink activeClassName='active-class'>Saved Movies</NavLink>
+          <button onClick={logout}>Logout</button>
+        </div>
+        }
       
-    </div>
+      </div>
+    </Router>
   );
 }
 
