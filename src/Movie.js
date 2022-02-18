@@ -25,6 +25,7 @@ export default function Movie({ movie, onList, reloadSavedList }) {
       
       <p>{watched && 'watched'}</p>
       <p>{movie.title}</p>
+      <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
 
     </div>
   );

@@ -1,3 +1,22 @@
 .App {
   text-align: center;
 }
+
+.movie img {
+  height: 12rem;
+}
+
+.movie {
+  border: pink 1px solid;
+}
+
+.movie-search-results {
+  border: blue 1px solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.search {
+  border: red 1px solid;
+}
