@@ -21,11 +21,37 @@ function App() {
         {
           user &&
         <div>
-          <NavLink activeClassName='active-class'>Find Movies</NavLink>
-          <NavLink activeClassName='active-class'>Saved Movies</NavLink>
+          <NavLink activeClassName='active-class' to='/search'>Find Movies</NavLink>
+          <NavLink activeClassName='active-class' to='/saved'>Saved Movies</NavLink>
           <button onClick={logout}>Logout</button>
         </div>
         }
+
+        <Switch>
+          <Route exact path='/'>
+            {
+              user  
+                ? <Redirect to='/search' />
+                : <AuthPage setUser={setUser} />
+            }
+          </Route>
+
+          <Route exact path='/search'>
+            {
+              user
+                ? <SearchPage />
+                : <Redirect to='/' />
+            }
+          </Route>
+
+          <Route exact path='/saved'>
+            {
+              user
+                ? <ListPage />
+                : <Redirect to='/' />
+            }
+          </Route>
+        </Switch>
       
       </div>
     </Router>
