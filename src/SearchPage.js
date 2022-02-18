@@ -26,8 +26,25 @@ export default function SearchPage() {
     reloadSavedList();
   }, []);
 
+  function onList(api_id) {
+    const match = savedList.find(item => Number(item.api_id) === Number(api_id));
+
+    return Boolean(match);
+  }
 
   return (
-    <div>SearchPage</div>
+    <div className='search'>
+      <form onSubmit={handleSearch}>
+        <input 
+          value={search}
+          onChange={e => setSearch(e.target.value)} />
+        <button>search</button>
+      </form>
+
+      <div className='search-results'>
+        <ListPage movies={results} onList={onList} reloadSavedList={reloadSavedList} />
+      </div>
+
+    </div>
   );
 }

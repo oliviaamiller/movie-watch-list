@@ -9,9 +9,9 @@ export default function AuthPage({ setUser }) {
   async function handleSignIn(e) {
     e.preventDefault();
 
-    const user = await signIn(email, password);
+    const returningUser = await signIn(email, password);
 
-    setUser(user);
+    setUser(returningUser);
     setEmail('');
     setPassword('');
   }
@@ -19,11 +19,9 @@ export default function AuthPage({ setUser }) {
   async function handleSignUp(e) {
     e.preventDefault();
 
-    const user = await signUp(email, password);
+    const newUser = await signUp(email, password);
 
-    setUser(user);
-    setEmail('');
-    setPassword('');
+    setUser(newUser);
   }
 
   return (
