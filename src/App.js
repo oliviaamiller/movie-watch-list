@@ -8,7 +8,7 @@ import {
 import { useState } from 'react';
 import AuthPage from './AuthPage';
 import SearchPage from './SearchPage';
-import ListPage from './ListPage';
+import SavedListPage from './SavedListPage';
 import { logout } from './services/fetch-utils';
 import './App.css';
 
@@ -38,17 +38,17 @@ function App() {
 
           <Route exact path='/search'>
             {
-              user
-                ? <SearchPage />
-                : <Redirect to='/' />
+              !user
+                ? <Redirect to='/' />
+                : <SearchPage />
             }
           </Route>
 
           <Route exact path='/saved'>
             {
-              user
-                ? <ListPage />
-                : <Redirect to='/' />
+              !user
+                ? <Redirect to='/' />
+                : <SavedListPage />
             }
           </Route>
         </Switch>

@@ -1,9 +1,9 @@
 import { useLocation } from 'react-router-dom';
 import Movie from './Movie';
-import SavedListMovie from './SavedListMovie';
+import SavedMovie from './SavedMovie';
 
 
-export default function ListPage({ movies, onList, reloadSavedList }) {
+export default function MoviesList({ movies, onList, reloadSavedList }) {
   const location = useLocation();
 
   return (
@@ -13,7 +13,7 @@ export default function ListPage({ movies, onList, reloadSavedList }) {
           movie={movie}
           onList={onList}
           reloadSavedList={reloadSavedList} />
-        : <SavedListMovie key={`${movie.title}-${i}`}
+        : <SavedMovie key={`${movie.title}-${i}`}
           movie={movie}
           reloadSavedList={reloadSavedList} />)
       }

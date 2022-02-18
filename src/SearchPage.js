@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import ListPage from './ListPage';
+import SavedListPage from './SavedListPage';
 import { searchMovies, getList } from './services/fetch-utils';
 import './App.css';
 
@@ -42,7 +42,7 @@ export default function SearchPage() {
       </form>
 
       <div className='search-results'>
-        <ListPage movies={results} onList={onList} reloadSavedList={reloadSavedList} />
+        <SavedListPage movies={results} onList={onList} reloadSavedList={reloadSavedList} />
       </div>
 
     </div>
