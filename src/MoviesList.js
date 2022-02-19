@@ -3,12 +3,12 @@ import Movie from './Movie';
 import SavedMovie from './SavedMovie';
 
 
-export default function MoviesList({ results, onList, reloadSavedList }) {
+export default function MoviesList({ movies, onList, reloadSavedList }) {
   const location = useLocation();
 
   return (
     <div className='movie-search-results'>
-      {results.map((movie, i) => location.pathname.includes('search')
+      {movies.map((movie, i) => location.pathname.includes('search')
         ? <Movie key={`${movie.title}-${i}`}
           movie={movie}
           onList={onList}

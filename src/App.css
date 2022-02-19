@@ -2,12 +2,18 @@
   text-align: center;
 }
 
+.App img {
+  height: 12rem;
+}
+
+
 .movie img {
   height: 12rem;
 }
 
 .movie {
   border: pink 1px solid;
+  cursor: pointer;
 }
 
 .movie-search-results {

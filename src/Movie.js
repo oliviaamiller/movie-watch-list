@@ -5,14 +5,15 @@ export default function Movie({ movie, onList, reloadSavedList }) {
 
   async function handleClick() {
     if (!watched) {
-      const savedListMovie = {
+      const savedMovie = {
         title: movie.title,
         api_id: movie.id,
         description: movie.overview,
-        poster: movie.poster_path
+        poster: movie.poster_path,
+        watched: false,
       };
 
-      await addToList(savedListMovie);
+      await addToList(savedMovie);
       await reloadSavedList();
     }
   }

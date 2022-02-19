@@ -12,7 +12,7 @@ export default function SavedMovie({ movie, reloadSavedList }) {
     <div className='saved'
       onClick={handleClick}>
       <p>watched? {movie.watched ? 'yes' : 'no'}</p>
-      <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
+      <img src={`https://image.tmdb.org/t/p/original${movie.poster}`} />
       <p>{movie.title}</p>
 
     </div>
