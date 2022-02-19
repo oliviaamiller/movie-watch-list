@@ -29,7 +29,7 @@ function App() {
       <div className="App">
         {
           user &&
-        <div>
+        <div className='nav'>
           <NavLink activeClassName='active-class' to='/search'>Find Movies</NavLink>
           <NavLink activeClassName='active-class' to='/saved'>Saved Movies</NavLink>
           <button onClick={logout}>Logout</button>

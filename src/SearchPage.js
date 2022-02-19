@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import SavedListPage from './SavedListPage';
-import { searchMovies, getList } from './services/fetch-utils';
+import MoviesList from './MoviesList';
+import { getList } from './services/fetch-utils';
 import './App.css';
 
 export default function SearchPage() {
@@ -11,9 +11,11 @@ export default function SearchPage() {
   async function handleSearch(e) {
     e.preventDefault();
 
-    const movies = await searchMovies(search);
+    const response = await fetch(`/.netlify/functions/movie-endpoint?searchQuery=${search}`);
 
-    setResults(movies);
+    const json = await response.json();
+    
+    setResults(json);
   }
 
   async function reloadSavedList() {
@@ -42,7 +44,7 @@ export default function SearchPage() {
       </form>
 
       <div className='search-results'>
-        <SavedListPage movies={results} onList={onList} reloadSavedList={reloadSavedList} />
+        <MoviesList results={results} onList={onList} reloadSavedList={reloadSavedList} />
       </div>
 
     </div>

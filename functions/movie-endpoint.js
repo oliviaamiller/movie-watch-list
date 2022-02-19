@@ -13,7 +13,7 @@ exports.handler = async (event) => {
   try {
     const response = await fetch(endpointURL);
     const data = await response.json();
-    const json = JSON.stringify({ data });
+    const json = JSON.stringify(data.results);
     
     return { 
       statusCode: 200, 
