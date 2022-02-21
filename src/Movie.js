@@ -25,7 +25,11 @@ export default function Movie({ movie, onList, reloadSavedList }) {
       className={`movie ${watched ? 'watched' : ''}`}>
       
       <p>{watched && 'watched'}</p>
-      <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
+      <p>{movie.poster_path
+        ? <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
+        : 'no image'
+      }
+      </p>
       <p>{movie.title}</p>
 
     </div>
