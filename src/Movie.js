@@ -1,10 +1,10 @@
 import { addToList } from './services/fetch-utils';
 
 export default function Movie({ movie, onList, reloadSavedList }) {
-  const watched = onList(movie.id);
+  const savedToList = onList(movie.id);
 
   async function handleClick() {
-    if (!watched) {
+    if (!savedToList) {
       const savedMovie = {
         title: movie.title,
         api_id: movie.id,
@@ -22,9 +22,9 @@ export default function Movie({ movie, onList, reloadSavedList }) {
   return (
     <div 
       onClick={handleClick}
-      className={`movie ${watched ? 'watched' : ''}`}>
+      className={`movie ${savedToList ? 'on-list' : ''}`}>
       
-      <p>{watched && 'watched'}</p>
+      <p>{savedToList && 'saved'}</p>
       <span>{movie.poster_path
         ? <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
         : <div className='poster'>
