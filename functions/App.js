@@ -5,32 +5,22 @@ import {
   Redirect,
   NavLink
 } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import AuthPage from './AuthPage';
 import SearchPage from './SearchPage';
-import SavedListPage from './SavedListPage';
-import { logout, getUser } from './services/fetch-utils';
+import ListPage from './ListPage';
+import { logout } from './services/fetch-utils';
 import './App.css';
 
 function App() {
   const [user, setUser] = useState('');
 
-  useEffect(() => {
-    async function fetch() {
-      const currentUser = await getUser();
-      
-      setUser(currentUser);
-    }
-    fetch();
-  }, []);
-
   return (
     <Router>
       <div className="App">
-        <p className='title'>Movies</p>
         {
           user &&
-        <div className='nav'>
+        <div>
           <NavLink activeClassName='active-class' to='/search'>Find Movies</NavLink>
           <NavLink activeClassName='active-class' to='/saved'>Saved Movies</NavLink>
           <button onClick={logout}>Logout</button>
@@ -48,17 +38,17 @@ function App() {
 
           <Route exact path='/search'>
             {
-              !user
-                ? <Redirect to='/' />
-                : <SearchPage />
+              user
+                ? <SearchPage />
+                : <Redirect to='/' />
             }
           </Route>
 
           <Route exact path='/saved'>
             {
-              !user
-                ? <Redirect to='/' />
-                : <SavedListPage />
+              user
+                ? <ListPage />
+                : <Redirect to='/' />
             }
           </Route>
         </Switch>

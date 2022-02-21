@@ -2,37 +2,75 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App img {
+  width: 12rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  background-color: pink;
+  padding: 0;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
+  background-color: pink;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.movie {
+  /* border: pink 1px solid; */
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  width: 20rem;
+}
+
+.movies-list {
+  background-color: aliceblue;
+  /* border: blue 1px solid; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.search {
+  background-color: rgb(255, 235, 83);
+  border: red 1px solid;
+  padding: .5rem;
+}
+
+.search input {
+  width: 12rem;
+  padding: .2rem;
+}
+
+.search button {
+  padding: .2rem;
+
+}
+
+.saved {
+  border: green 1px solid;
+}
+
+.poster {
+  width: 12rem;
+  height: 17.5rem;
+  background-color: pink;
+  text-align: center;
+}
+
+.poster-title {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 3rem 1rem 0rem 1rem;
 }
