@@ -35,10 +35,11 @@ export default function SearchPage() {
   }
 
   return (
-    <div className='search'>
-      <form onSubmit={handleSearch}>
+    <div>
+      <form className='search' onSubmit={handleSearch}>
         <input 
           value={search}
+          placeholder='search for movies by title'
           onChange={e => setSearch(e.target.value)} />
         <button>search</button>
       </form>

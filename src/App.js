@@ -27,6 +27,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <p className='title'>Movies</p>
         {
           user &&
         <div className='nav'>

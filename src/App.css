@@ -6,19 +6,35 @@
   width: 12rem;
 }
 
+.title {
+  background-color: pink;
+  padding: 0;
+  margin: 0;
+}
+
+.nav {
+  background-color: pink;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .movie {
-  border: pink 1px solid;
+  /* border: pink 1px solid; */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   text-align: center;
   width: 20rem;
 }
 
 .movies-list {
-  border: blue 1px solid;
+  background-color: aliceblue;
+  /* border: blue 1px solid; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -26,7 +42,19 @@
 }
 
 .search {
+  background-color: rgb(255, 235, 83);
   border: red 1px solid;
+  padding: .5rem;
+}
+
+.search input {
+  width: 12rem;
+  padding: .2rem;
+}
+
+.search button {
+  padding: .2rem;
+
 }
 
 .saved {
