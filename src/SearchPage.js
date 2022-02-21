@@ -43,7 +43,7 @@ export default function SearchPage() {
         <button>search</button>
       </form>
 
-      <div className='search-results'>
+      <div>
         <MoviesList movies={results} onList={onList} reloadSavedList={reloadSavedList} />
       </div>
 

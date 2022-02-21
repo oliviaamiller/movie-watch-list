@@ -3,24 +3,24 @@
 }
 
 .App img {
-  height: 12rem;
-}
-
-
-.movie img {
-  height: 12rem;
+  width: 12rem;
 }
 
 .movie {
   border: pink 1px solid;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20rem;
 }
 
-.movie-search-results {
+.movies-list {
   border: blue 1px solid;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .search {

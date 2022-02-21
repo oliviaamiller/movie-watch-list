@@ -7,7 +7,7 @@ export default function MoviesList({ movies, onList, reloadSavedList }) {
   const location = useLocation();
 
   return (
-    <div className='movie-search-results'>
+    <div className='movies-list'>
       {movies.map((movie, i) => location.pathname.includes('search')
         ? <Movie key={`${movie.title}-${i}`}
           movie={movie}
