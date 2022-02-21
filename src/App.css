@@ -34,7 +34,15 @@
 }
 
 .poster {
-  width:500px;
-  height:100px;
-  border:1px solid #000
+  width: 12rem;
+  height: 17.5rem;
+  background-color: pink;
+  text-align: center;
+}
+
+.poster-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 3rem 1rem 0rem 1rem;
 }

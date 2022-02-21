@@ -28,7 +28,7 @@ export default function Movie({ movie, onList, reloadSavedList }) {
       <span>{movie.poster_path
         ? <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
         : <div className='poster'>
-          <p>{movie.title}</p>
+          <p className='poster-title'>{movie.title}</p>
         </div>
       }
       </span>
